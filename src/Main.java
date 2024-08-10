@@ -1,17 +1,10 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-
-        String[] splitedValue = input.split(",");
-        int first = Integer.parseInt(splitedValue[0]);
-        int second = Integer.parseInt(splitedValue[1]);
-
-        for(int i = first; i <= second; i++) {
-            System.out.println(i + "단");
-            Gugudan.print(Gugudan.calculate(i));
-        }
+        System.out.println("일  월  화  수  목  금  토");
+        System.out.println("----------------------");
+        System.out.println(" 1  2  3  4  5  6  7");
+        System.out.println(" 8  9 10 11 12 13 14");
+        System.out.println("15 16 17 18 19 20 21");
+        System.out.println("22 23 24 25 26 27 28");
     }
 }
