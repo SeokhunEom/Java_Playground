@@ -1,9 +1,14 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        prompt(scanner);
+        scanner.close();
+    }
 
+    private static void prompt(Scanner scanner) {
         while (true) {
             System.out.println("년도을 입력하세요.");
             System.out.print("> ");
@@ -21,11 +26,15 @@ public class Main {
                 continue;
             }
 
-            Calendar.drawCalendar(year, month);
+            System.out.println("첫번째 요일을 입력하세요. (SU, MO, TU, WE, TH, FR, SA)");
+            System.out.print("> ");
+            String day1 = scanner.next().toUpperCase();
+            if (!day1.equals("SU") && !day1.equals("MO") && !day1.equals("TU") && !day1.equals("WE") && !day1.equals("TH") && !day1.equals("FR") && !day1.equals("SA")) {
+                System.out.println("잘못된 요일을 입력하셨습니다.");
+                continue;
+            }
+
+            Calendar.drawCalendar(year, month, day1);
         }
-
-        scanner.close();
     }
-
-
 }
